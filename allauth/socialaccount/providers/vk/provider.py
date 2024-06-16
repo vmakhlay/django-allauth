@@ -34,8 +34,7 @@ class VKProvider(OAuth2Provider):
 
     def get_default_scope(self):
         scope = []
-        if app_settings.QUERY_EMAIL:
-            scope.append("email")
+        scope.append("email")
         return scope
 
     def extract_uid(self, data):
