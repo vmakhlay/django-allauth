@@ -20,10 +20,7 @@ class YandexProvider(OAuth2Provider):
     oauth2_adapter_class = YandexOAuth2Adapter
 
     def get_default_scope(self):
-        scope = ["login:info"]
-        if app_settings.QUERY_EMAIL:
-            scope.append("login:email")
-        return scope
+        return []
 
     def extract_uid(self, data):
         return str(data["id"])
